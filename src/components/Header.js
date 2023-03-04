@@ -6,7 +6,7 @@ const Wrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: #ff4d00;
+  background-color: #bdcdd6;
 `;
 
 const Title = styled.div`
@@ -15,7 +15,9 @@ const Title = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 3rem;
-  color: #fff;
+  color: #eee9da;
+  text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.1),
+    1px 1px 1px rgba(0, 0, 0, 0.9);
   margin-left: 3rem;
 `;
 
