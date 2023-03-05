@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/memory-card-project/static/js/main.5fb0fd5e.js",
+    "main.js": "/memory-card-project/static/js/main.cfffc6f8.js",
     "static/media/Geralt.png": "/memory-card-project/static/media/Geralt.539d9b5321184e5c3a9a.png",
     "static/media/Thief.png": "/memory-card-project/static/media/Thief.0bfacae33683c1019c55.png",
     "static/media/Hunter.png": "/memory-card-project/static/media/Hunter.4d510bcebc268dcb4290.png",
@@ -46,6 +46,7 @@
     "static/media/Clan.png": "/memory-card-project/static/media/Clan.834d7148e097e2baf255.png",
     "static/media/Lioness.png": "/memory-card-project/static/media/Lioness.93e14a4304989c7e5e06.png",
     "static/media/HistoryClan.png": "/memory-card-project/static/media/HistoryClan.24442a5df937cad726bf.png",
+    "static/media/Griffin.png": "/memory-card-project/static/media/Griffin.d44d8a82d836d724dbf1.png",
     "static/media/Cyclops.png": "/memory-card-project/static/media/Cyclops.24a4a318949f1f4925db.png",
     "static/media/AnCraite.png": "/memory-card-project/static/media/AnCraite.2f68d6b4128e2719bcb6.png",
     "static/media/EternalFirePriest.png": "/memory-card-project/static/media/EternalFirePriest.a6123b2a02abdbbc53a9.png",
@@ -66,10 +67,11 @@
     "static/media/Dandelion.png": "/memory-card-project/static/media/Dandelion.6817f053f640f225b246.png",
     "static/media/VampireAnother.png": "/memory-card-project/static/media/VampireAnother.71523fba05b10165c725.png",
     "static/media/SwampWitch.png": "/memory-card-project/static/media/SwampWitch.8d6356980ba558fe4a10.png",
+    "static/media/GwentLogo.png": "/memory-card-project/static/media/GwentLogo.15701366bb2091acbd9a.png",
     "index.html": "/memory-card-project/index.html",
-    "main.5fb0fd5e.js.map": "/memory-card-project/static/js/main.5fb0fd5e.js.map"
+    "main.cfffc6f8.js.map": "/memory-card-project/static/js/main.cfffc6f8.js.map"
   },
   "entrypoints": [
-    "static/js/main.5fb0fd5e.js"
+    "static/js/main.cfffc6f8.js"
   ]
 }
