@@ -1,6 +1,7 @@
+import Header from './Header';
+import Footer from './Footer';
 import Images from './Images';
 import { shuffle } from 'lodash';
-// import uniqid from 'uniqid';
 import { useState } from 'react';
 import styled from 'styled-components';
 
@@ -89,23 +90,24 @@ function Canvas(props) {
     }
   };
 
-  props.func(score, best);
-
   return (
-    // [score, best],
-    <CardContainer>
-      {cards.map((elem) => {
-        return (
-          <Card
-            key={elem.id}
-            data-id={elem.id}
-            data-clicked='false'
-            onClick={handleClick}>
-            <Image key={elem.id} src={elem.src} alt={elem.name} />
-          </Card>
-        );
-      })}
-    </CardContainer>
+    <>
+      <Header score={score} best={best} />
+      <CardContainer>
+        {cards.map((elem) => {
+          return (
+            <Card
+              key={elem.id}
+              data-id={elem.id}
+              data-clicked='false'
+              onClick={handleClick}>
+              <Image key={elem.id} src={elem.src} alt={elem.name} />
+            </Card>
+          );
+        })}
+      </CardContainer>
+      <Footer />
+    </>
   );
 }
 

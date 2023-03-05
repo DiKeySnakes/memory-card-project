@@ -10,9 +10,14 @@ const Wrapper = styled.div`
   align-items: center;
   background-color: #bdcdd6;
   position: fixed;
+  border-bottom: 2px solid black;
+  -webkit-box-shadow: 0px 10px 13px -7px #000000,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
   top: 0;
   left: 50%;
   margin-left: -50vw;
+  z-index: 10;
 `;
 
 const Logo = styled.div`
@@ -39,7 +44,7 @@ const Title = styled.div`
 `;
 
 const Score = styled.div`
-  width: 10rem;
+  width: 15rem;
   height: 7rem;
   display: flex;
   flex-direction: row;
@@ -52,7 +57,7 @@ const Score = styled.div`
 `;
 
 const Best = styled.div`
-  width: 10rem;
+  width: 15rem;
   height: 7rem;
   display: flex;
   flex-direction: row;
