@@ -12,11 +12,16 @@ const MainContainer = styled.div`
 `;
 
 function App() {
+  const pull_data = (score, best) => {
+    console.log(score, best);
+    return { score, best };
+  };
+
   return (
     <div>
       <Header />
       <MainContainer>
-        <Canvas />
+        <Canvas func={pull_data} />
         <Footer />
       </MainContainer>
     </div>
