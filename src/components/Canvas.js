@@ -2,8 +2,33 @@ import Header from './Header';
 import Footer from './Footer';
 import Images from './Images';
 import { shuffle } from 'lodash';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import Modal from 'react-modal';
+
+const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+    border: '2px solid black',
+    borderRadius: '1rem',
+    backgroundColor: '#eee9da',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space around',
+    alignItems: 'center',
+    fontSize: '2rem',
+  },
+  overlay: {
+    backgroundColor: 'rgba(0, 0, 0, 0.75)',
+  },
+};
+
+Modal.setAppElement('#root');
 
 const CardContainer = styled.div`
   margin-top: 8rem;
@@ -66,28 +91,72 @@ function Canvas(props) {
   const [clicked, setClicked] = useState([]);
   const [isGameOver, setIsGameOver] = useState(false);
 
+  let subtitle;
+  const [modalIsOpen, setIsOpen] = useState(false);
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function afterOpenModal() {
+    subtitle.style.color = '#f00';
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+  const card = document.querySelectorAll('[data-clicked]');
+
+  useEffect(() => {
+    if (score > best) {
+      setBest(score);
+    }
+  }, [score, best]);
+
+  useEffect(() => {
+    if (score === cards.length) {
+      setIsGameOver(true);
+      console.log('YOU WIN THE GAME!!!');
+      setCards(shuffle(cards));
+      setScore(0);
+      setClicked([]);
+      card.forEach((elem) => {
+        return (elem.dataset.clicked = 'false');
+      });
+      setIsGameOver(false);
+    }
+  }, [score, cards, clicked, card]);
+
   const handleClick = (e) => {
     const target = e.target.parentNode;
+
     if (!isGameOver) {
       if (!clicked.includes(target.dataset.id)) {
-        console.log('target dataset id:', target.dataset.id);
         target.dataset.clicked = 'true';
         setScore(score + 1);
-        console.log('score:', score);
         setClicked(clicked.concat(target.dataset.id));
-        console.log(clicked);
-        if (score > best) {
-          setBest(score);
-          console.log('best:', best);
-        }
         setCards(shuffle(cards));
       } else {
         setIsGameOver(true);
         console.log('GAME OVER!!!');
+        openModal();
       }
     } else {
       console.log('Please Start New Game!');
+      openModal();
     }
+  };
+
+  const startNewGame = () => {
+    setCards(shuffle(cards));
+    setScore(0);
+    setClicked([]);
+    card.forEach((elem) => {
+      return (elem.dataset.clicked = 'false');
+    });
+    setIsGameOver(false);
+    closeModal();
   };
 
   return (
@@ -107,6 +176,16 @@ function Canvas(props) {
         })}
       </CardContainer>
       <Footer />
+      <Modal
+        isOpen={modalIsOpen}
+        onAfterOpen={afterOpenModal}
+        onRequestClose={closeModal}
+        style={customStyles}
+        contentLabel='Example Modal'>
+        <h1 ref={(_subtitle) => (subtitle = _subtitle)}>Game Over!</h1>
+        <div>Please Start New Game</div>
+        <button onClick={startNewGame}>New Game</button>
+      </Modal>
     </>
   );
 }
