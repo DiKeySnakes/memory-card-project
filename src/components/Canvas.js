@@ -30,6 +30,23 @@ const customStyles = {
 
 Modal.setAppElement('#root');
 
+const Button = styled.button`
+  padding: 0.5rem 1rem;
+  font-size: 2rem;
+  background-color: rgba(189, 205, 214, 1);
+  border: 2px solid rgba(202, 173, 114, 0.7);
+  border-radius: 1rem;
+  cursor: pointer;
+  margin-top: 2rem;
+  color: #eee9da;
+  text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.1),
+    1px 1px 1px rgba(0, 0, 0, 0.9);
+  &:hover {
+    background-color: rgba(189, 205, 214, 0.7);
+    border: 2px solid rgba(202, 173, 114, 1);
+  }
+`;
+
 const CardContainer = styled.div`
   margin-top: 8rem;
   display: grid;
@@ -184,7 +201,7 @@ function Canvas(props) {
         contentLabel='Example Modal'>
         <h1 ref={(_subtitle) => (subtitle = _subtitle)}>Game Over!</h1>
         <div>Please Start New Game</div>
-        <button onClick={startNewGame}>New Game</button>
+        <Button onClick={startNewGame}>New Game</Button>
       </Modal>
     </>
   );
