@@ -1,6 +1,6 @@
 import Header from './Header';
 import Footer from './Footer';
-import Images from './Images';
+import EasyLevelImages from './EasyLevelImages.js';
 import { shuffle } from 'lodash';
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
@@ -88,9 +88,9 @@ const Card = styled.div`
     transform: scale(1.1);
   }
   overflow: hidden;
-  &[data-clicked='true'] {
+  /* &[data-clicked='true'] {
     background-color: gray;
-  }
+  } */
 `;
 
 const Image = styled.img`
@@ -99,13 +99,28 @@ const Image = styled.img`
   object-fit: contain;
   src: ${(props) => props.src};
   alt: ${(props) => props.alt};
+  /* margin-top: 2rem; */
+`;
+
+const Description = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  /* border-top: 2px solid black; */
+  font-size: 2rem;
+  color: #f00;
+  position: relative;
 `;
 
 function Canvas(props) {
-  const [cards, setCards] = useState(shuffle(Images));
+  const [cards, setCards] = useState(shuffle(EasyLevelImages));
   const [score, setScore] = useState(0);
   const [best, setBest] = useState(0);
   const [clicked, setClicked] = useState([]);
+  const [message, setMessage] = useState('');
   const [isGameOver, setIsGameOver] = useState(false);
 
   let subtitle;
@@ -134,16 +149,10 @@ function Canvas(props) {
   useEffect(() => {
     if (score === cards.length) {
       setIsGameOver(true);
-      console.log('YOU WIN THE GAME!!!');
-      setCards(shuffle(cards));
-      setScore(0);
-      setClicked([]);
-      card.forEach((elem) => {
-        return (elem.dataset.clicked = 'false');
-      });
-      setIsGameOver(false);
+      setMessage('You win the game!');
+      openModal();
     }
-  }, [score, cards, clicked, card]);
+  }, [score, cards]);
 
   const handleClick = (e) => {
     const target = e.target.parentNode;
@@ -156,11 +165,10 @@ function Canvas(props) {
         setCards(shuffle(cards));
       } else {
         setIsGameOver(true);
-        console.log('GAME OVER!!!');
+        setMessage('Game over!');
         openModal();
       }
     } else {
-      console.log('Please Start New Game!');
       openModal();
     }
   };
@@ -188,6 +196,7 @@ function Canvas(props) {
               data-clicked='false'
               onClick={handleClick}>
               <Image key={elem.id} src={elem.src} alt={elem.name} />
+              <Description>{elem.name}</Description>
             </Card>
           );
         })}
@@ -199,7 +208,7 @@ function Canvas(props) {
         onRequestClose={closeModal}
         style={customStyles}
         contentLabel='Example Modal'>
-        <h1 ref={(_subtitle) => (subtitle = _subtitle)}>Game Over!</h1>
+        <h1 ref={(_subtitle) => (subtitle = _subtitle)}>{`${message}`}</h1>
         <div>Please Start New Game</div>
         <Button onClick={startNewGame}>New Game</Button>
       </Modal>
