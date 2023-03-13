@@ -1,6 +1,8 @@
 import Header from './Header';
 import Footer from './Footer';
-import EasyLevelImages from './EasyLevelImages.js';
+// import EasyLevelImages from './EasyLevelImages.js';
+// import MediumLevelImages from './MediumLevelImages.js';
+// import HardLevelImages from './HardLevelImages.js';
 import { shuffle } from 'lodash';
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
@@ -62,7 +64,7 @@ const CardContainer = styled.div`
   @media (max-width: 650px) {
     grid-template-columns: repeat(2, 1fr);
   }
-  @media (max-width: 430px) {
+  @media (max-width: 330px) {
     grid-template-columns: repeat(1, 1fr);
   }
 `;
@@ -88,6 +90,10 @@ const Card = styled.div`
     transform: scale(1.1);
   }
   overflow: hidden;
+  @media (max-width: 430px) {
+    width: 15rem;
+    height: 20rem;
+  }
   /* &[data-clicked='true'] {
     background-color: gray;
   } */
@@ -110,13 +116,22 @@ const Description = styled.div`
   text-align: center;
   overflow: hidden;
   /* border-top: 2px solid black; */
-  font-size: 2rem;
+  font-size: calc(1rem + 2vmin);
   color: #f00;
   position: relative;
 `;
 
 function Canvas(props) {
-  const [cards, setCards] = useState(shuffle(EasyLevelImages));
+  const difficultyLevel = props.difficultyLevel;
+  const changeDifficulty = props.changeDifficulty;
+  console.log('difficulty:', difficultyLevel);
+
+  const [cards, setCards] = useState(shuffle(difficultyLevel));
+
+  useEffect(() => {
+    setCards(difficultyLevel);
+  }, [difficultyLevel]);
+
   const [score, setScore] = useState(0);
   const [best, setBest] = useState(0);
   const [clicked, setClicked] = useState([]);
@@ -186,7 +201,7 @@ function Canvas(props) {
 
   return (
     <>
-      <Header score={score} best={best} />
+      <Header score={score} best={best} changeDifficulty={changeDifficulty} />
       <CardContainer>
         {cards.map((elem) => {
           return (
