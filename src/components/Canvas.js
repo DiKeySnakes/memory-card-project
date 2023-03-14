@@ -1,8 +1,5 @@
 import Header from './Header';
 import Footer from './Footer';
-// import EasyLevelImages from './EasyLevelImages.js';
-// import MediumLevelImages from './MediumLevelImages.js';
-// import HardLevelImages from './HardLevelImages.js';
 import { shuffle } from 'lodash';
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
@@ -105,7 +102,6 @@ const Image = styled.img`
   object-fit: contain;
   src: ${(props) => props.src};
   alt: ${(props) => props.alt};
-  /* margin-top: 2rem; */
 `;
 
 const Description = styled.div`
@@ -115,8 +111,7 @@ const Description = styled.div`
   align-items: center;
   text-align: center;
   overflow: hidden;
-  /* border-top: 2px solid black; */
-  font-size: calc(1rem + 2vmin);
+  font-size: calc(0.5rem + 2vmin);
   color: #f00;
   position: relative;
 `;

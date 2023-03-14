@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-// import { useState } from 'react';
 import audioMp3 from '../assets/audio/audioMp3.mp3';
 import TheWitcherMedallionLogo from '../assets/images/TheWitcherMedallionLogo.png';
 
@@ -20,12 +19,17 @@ const Wrapper = styled.div`
   left: 50%;
   margin-left: -50vw;
   z-index: 10;
-  font-size: calc(1rem + 2vmin);
+  font-size: calc(1.5rem + 2vmin);
+  @media (max-width: 650px) {
+    font-size: calc(1rem + 2vmin);
+  }
+  @media (max-width: 430px) {
+    font-size: calc(0.5rem + 2vmin);
+  }
 `;
 
 const Logo = styled.div`
-  width: 5rem;
-  height: 5rem;
+  width: calc(5rem + 5vmin);
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -34,16 +38,25 @@ const Logo = styled.div`
   margin-right: 1rem;
 `;
 
-const Title = styled.div`
+const TitleWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  /* font-size: calc(2rem + 2vmin); */
   color: #eee9da;
   text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.1),
     1px 1px 1px rgba(0, 0, 0, 0.9);
   margin-left: 3rem;
+`;
+
+const Title = styled.div`
+  height: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  white-space: nowrap;
+  font-size: calc(0.5rem + 2vmin);
 `;
 
 const Score = styled.div`
@@ -53,7 +66,7 @@ const Score = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  /* font-size: calc(2rem + 2vmin); */
+  margin-left: 1rem;
   color: #eee9da;
   text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.1),
     1px 1px 1px rgba(0, 0, 0, 0.9);
@@ -66,26 +79,47 @@ const Best = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  /* font-size: calc(2rem + 2vmin); */
+  margin-left: 1rem;
   color: #eee9da;
   text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.1),
     1px 1px 1px rgba(0, 0, 0, 0.9);
 `;
 
+const ButtonGroup = styled.div`
+  width: 15vmin;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-right: 3rem;
+
+  i {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  i:hover {
+    transform: scale(1.5);
+  }
+
+  @media (max-width: 430px) {
+    flex-direction: column;
+  }
+`;
+
 const Button = styled.button`
   padding: 0.5rem 1rem;
-  /* font-size: calc(2rem + 2vmin); */
+  font-size: calc(1.2rem + 2vmin);
   background-color: rgba(189, 205, 214, 1);
-  border: 2px solid rgba(202, 173, 114, 0.7);
-  border-radius: 1rem;
+  border: none;
   cursor: pointer;
-  margin-right: 5rem;
   color: #eee9da;
   text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.1),
     1px 1px 1px rgba(0, 0, 0, 0.9);
-  &:hover {
-    background-color: rgba(189, 205, 214, 0.7);
-    border: 2px solid rgba(202, 173, 114, 1);
+  @media (max-width: 650px) {
+    font-size: calc(1rem + 2vmin);
+  }
+  @media (max-width: 430px) {
+    font-size: calc(0.5rem + 2vmin);
   }
 `;
 
@@ -98,13 +132,9 @@ function Header(props) {
     audio.play();
   };
 
-  // const pauseAudio = () => {
-  //   audio.pause();
-  // };
-
   return (
     <Wrapper>
-      <Title>
+      <TitleWrapper>
         <Logo>
           <img
             src={TheWitcherMedallionLogo}
@@ -113,20 +143,25 @@ function Header(props) {
             height='100%'
             object-fit='contain'></img>
         </Logo>
-        The Witcher Memory Game
-      </Title>
+        <Title>
+          <span>The Witcher</span>
+          <span>Memory Game</span>
+        </Title>
+      </TitleWrapper>
       <Score>
         <span>Score: {props.score}</span>
       </Score>
       <Best>
         <span>Best: {props.best}</span>
       </Best>
-      <Button onClick={playAudio}>
-        <i className='fa-solid fa-volume-high'></i>
-      </Button>
-      <Button onClick={props.changeDifficulty}>
-        <i className='fa-solid fa-trophy'></i>
-      </Button>
+      <ButtonGroup>
+        <Button onClick={playAudio}>
+          <i className='fa-solid fa-volume-high'></i>
+        </Button>
+        <Button onClick={props.changeDifficulty}>
+          <i className='fa-solid fa-trophy'></i>
+        </Button>
+      </ButtonGroup>
     </Wrapper>
   );
 }
