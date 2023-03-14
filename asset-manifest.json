@@ -1,10 +1,13 @@
 {
   "files": {
-    "main.js": "/memory-card-project/static/js/main.1b3aa7c0.js",
+    "main.js": "/memory-card-project/static/js/main.1b0d6d04.js",
     "static/media/audioMp3.mp3": "/memory-card-project/static/media/audioMp3.0c4c424dcd8cbacee879.mp3",
+    "static/media/Tw3GeraltHorsemanLogo.png": "/memory-card-project/static/media/Tw3GeraltHorsemanLogo.a43bb44166dd0cf2f7e2.png",
+    "static/media/Tw3KernunLogo.png": "/memory-card-project/static/media/Tw3KernunLogo.cd37cdcccf462d77afd0.png",
     "static/media/Tw3BranAnTuirseach.png": "/memory-card-project/static/media/Tw3BranAnTuirseach.51735630710564737f56.png",
     "static/media/Tw3Brewess.png": "/memory-card-project/static/media/Tw3Brewess.03f6ac7912e744571643.png",
     "static/media/Tw3VlodimirVonEverec.png": "/memory-card-project/static/media/Tw3VlodimirVonEverec.cdd8118dc87d39594730.png",
+    "static/media/Tw3FiendLogo.png": "/memory-card-project/static/media/Tw3FiendLogo.266858220982366f24e6.png",
     "static/media/Tw3OtryggAnHindar.png": "/memory-card-project/static/media/Tw3OtryggAnHindar.4d510bcebc268dcb4290.png",
     "static/media/Tw3Quinto.png": "/memory-card-project/static/media/Tw3Quinto.ee9b1faba1791462c2d4.png",
     "static/media/Tw3Bart.png": "/memory-card-project/static/media/Tw3Bart.0bb204328c264353640c.png",
@@ -139,9 +142,9 @@
     "static/media/Tw3JanneDoppler.png": "/memory-card-project/static/media/Tw3JanneDoppler.e5191c01e29c326c65ec.png",
     "static/media/Tw3Succubus.png": "/memory-card-project/static/media/Tw3Succubus.b3c46fa0ae7729f2ff7b.png",
     "index.html": "/memory-card-project/index.html",
-    "main.1b3aa7c0.js.map": "/memory-card-project/static/js/main.1b3aa7c0.js.map"
+    "main.1b0d6d04.js.map": "/memory-card-project/static/js/main.1b0d6d04.js.map"
   },
   "entrypoints": [
-    "static/js/main.1b3aa7c0.js"
+    "static/js/main.1b0d6d04.js"
   ]
 }
