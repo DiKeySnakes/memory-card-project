@@ -116,10 +116,16 @@ const Description = styled.div`
   position: relative;
 `;
 
+const Paragraph = styled.p`
+  color: #f00;
+  font-size: 2rem;
+  line-height: 1.6rem;
+  font-weight: 600;
+`;
+
 function Canvas(props) {
   const difficultyLevel = props.difficultyLevel;
   const changeDifficulty = props.changeDifficulty;
-  console.log('difficulty:', difficultyLevel);
 
   const [cards, setCards] = useState(shuffle(difficultyLevel));
 
@@ -142,6 +148,7 @@ function Canvas(props) {
 
   function afterOpenModal() {
     subtitle.style.color = '#f00';
+    subtitle.style.fontSize = 'calc(1.5rem + 2vmin)';
   }
 
   function closeModal() {
@@ -219,7 +226,7 @@ function Canvas(props) {
         style={customStyles}
         contentLabel='Example Modal'>
         <h1 ref={(_subtitle) => (subtitle = _subtitle)}>{`${message}`}</h1>
-        <div>Please Start New Game</div>
+        <Paragraph>Please Start New Game</Paragraph>
         <Button onClick={startNewGame}>New Game</Button>
       </Modal>
     </>
