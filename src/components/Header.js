@@ -1,5 +1,5 @@
+import { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import audioMp3 from '../assets/audio/audioMp3.mp3';
 import TheWitcherMedallionLogo from '../assets/images/TheWitcherMedallionLogo.png';
 
 const Wrapper = styled.div`
@@ -123,13 +123,28 @@ const Button = styled.button`
   }
 `;
 
+const audio = document.getElementById('audio');
+
 function Header(props) {
-  const audio = new Audio(audioMp3);
-  audio.loop = true;
-  audio.volume = 0.2;
+  const [isPlaying, setIsPlaying] = useState(props.isPlaying);
+
+  useEffect(() => {
+    if (props.backgroundMusic === 'no') {
+      setIsPlaying(false);
+    } else {
+      setIsPlaying(true);
+    }
+  }, [props.backgroundMusic]);
+
+  const pauseAudio = () => {
+    audio.pause();
+    audio.currentTime = 0;
+    setIsPlaying(false);
+  };
 
   const playAudio = () => {
     audio.play();
+    setIsPlaying(true);
   };
 
   return (
@@ -155,8 +170,11 @@ function Header(props) {
         <span>Best: {props.best}</span>
       </Best>
       <ButtonGroup>
-        <Button onClick={playAudio}>
-          <i className='fa-solid fa-volume-high'></i>
+        <Button onClick={isPlaying ? pauseAudio : playAudio}>
+          <i
+            className={
+              isPlaying ? 'fa-solid fa-volume-high' : 'fa-solid fa-volume-xmark'
+            }></i>
         </Button>
         <Button onClick={props.changeDifficulty}>
           <i className='fa-solid fa-trophy'></i>

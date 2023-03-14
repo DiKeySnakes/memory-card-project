@@ -43,10 +43,10 @@ const MainContainer = styled.div`
 
 const MainParagraph = styled.p`
   color: #f00;
-  font-size: 2rem;
+  font-size: calc(1rem + 1vmin);
   line-height: 1.6rem;
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 `;
 
 const ImageContainer = styled.div`
@@ -127,6 +127,7 @@ const RadioButtonsContainer = styled.div`
 const Label = styled.label`
   display: flex;
   align-items: center;
+  margin-left: 1rem;
 `;
 
 const Paragraph = styled.p`
@@ -175,8 +176,21 @@ function App() {
     openModal();
   }, []);
 
+  const audio = document.getElementById('audio');
+  audio.loop = true;
+  audio.volume = 0.2;
+
+  const playAudio = () => {
+    audio.play();
+  };
+
+  const pauseAudio = () => {
+    audio.pause();
+  };
+
   const [difficultyLevel, setDifficultyLevel] = useState(EasyLevelImages);
   const [backgroundMusic, setBackgroundMusic] = useState('yes');
+  const [isPlaying, setIsPlaying] = useState(true);
 
   const handleChange = (e) => {
     const target = e.target;
@@ -184,6 +198,14 @@ function App() {
       setBackgroundMusic(target.value);
     }
   };
+
+  useEffect(() => {
+    if (backgroundMusic === 'yes') {
+      setIsPlaying(true);
+    } else {
+      setIsPlaying(false);
+    }
+  }, [isPlaying, backgroundMusic]);
 
   let subtitle;
   const [modalIsOpen, setIsOpen] = useState(false);
@@ -194,7 +216,7 @@ function App() {
 
   function afterOpenModal() {
     subtitle.style.color = '#f00';
-    subtitle.style.fontSize = 'calc(1.5rem + 2vmin)';
+    subtitle.style.fontSize = 'calc(1.5rem + 1vmin)';
   }
 
   function closeModal() {
@@ -203,16 +225,34 @@ function App() {
 
   const handleClickEasy = () => {
     setDifficultyLevel(EasyLevelImages);
+    if (backgroundMusic === 'yes') {
+      setIsPlaying(true);
+      playAudio();
+    } else {
+      setIsPlaying(false);
+    }
     closeModal();
   };
 
   const handleClickMedium = () => {
     setDifficultyLevel(MediumLevelImages);
+    if (backgroundMusic === 'yes') {
+      setIsPlaying(true);
+      playAudio();
+    } else {
+      setIsPlaying(false);
+    }
     closeModal();
   };
 
   const handleClickHard = () => {
     setDifficultyLevel(HardLevelImages);
+    if (backgroundMusic === 'yes') {
+      setIsPlaying(true);
+      playAudio();
+    } else {
+      setIsPlaying(false);
+    }
     closeModal();
   };
 
@@ -226,6 +266,9 @@ function App() {
         <Canvas
           difficultyLevel={difficultyLevel}
           changeDifficulty={changeDifficulty}
+          backgroundMusic={backgroundMusic}
+          isPlaying={isPlaying}
+          pauseAudio={pauseAudio}
         />
       </MainContainer>
       <Modal
@@ -263,7 +306,7 @@ function App() {
               name='background-music'
               id='yes'
               value='yes'
-              checked={true}
+              checked={backgroundMusic === 'yes'}
               onChange={handleChange}
             />
             <RadioBox></RadioBox>
@@ -275,6 +318,7 @@ function App() {
               name='background-music'
               id='no'
               value='no'
+              checked={backgroundMusic === 'no'}
               onChange={handleChange}
             />
             <RadioBox></RadioBox>

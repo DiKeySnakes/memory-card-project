@@ -126,6 +126,9 @@ const Paragraph = styled.p`
 function Canvas(props) {
   const difficultyLevel = props.difficultyLevel;
   const changeDifficulty = props.changeDifficulty;
+  const backgroundMusic = props.backgroundMusic;
+  const isPlaying = props.isPlaying;
+  const pauseAudio = props.pauseAudio;
 
   const [cards, setCards] = useState(shuffle(difficultyLevel));
 
@@ -203,7 +206,14 @@ function Canvas(props) {
 
   return (
     <>
-      <Header score={score} best={best} changeDifficulty={changeDifficulty} />
+      <Header
+        score={score}
+        best={best}
+        changeDifficulty={changeDifficulty}
+        backgroundMusic={backgroundMusic}
+        isPlaying={isPlaying}
+        pauseAudio={pauseAudio}
+      />
       <CardContainer>
         {cards.map((elem) => {
           return (
