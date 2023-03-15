@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/memory-card-project/static/js/main.d87aafe5.js",
+    "main.js": "/memory-card-project/static/js/main.9d838077.js",
     "static/media/Tw3GeraltHorsemanLogo.png": "/memory-card-project/static/media/Tw3GeraltHorsemanLogo.a43bb44166dd0cf2f7e2.png",
     "static/media/Tw3KernunLogo.png": "/memory-card-project/static/media/Tw3KernunLogo.cd37cdcccf462d77afd0.png",
     "static/media/Tw3BranAnTuirseach.png": "/memory-card-project/static/media/Tw3BranAnTuirseach.51735630710564737f56.png",
@@ -31,7 +31,6 @@
     "static/media/Tw3MadmanLugos.png": "/memory-card-project/static/media/Tw3MadmanLugos.d91d8ab6a1be4aedffa6.png",
     "static/media/Tw3Graden.png": "/memory-card-project/static/media/Tw3Graden.347c3fc5a7fc3d430c09.png",
     "static/media/Tw3VimmeVivaldi.png": "/memory-card-project/static/media/Tw3VimmeVivaldi.26cfcc725e2959f2e171.png",
-    "static/media/Tw3AntonioVivaldi.png": "/memory-card-project/static/media/Tw3AntonioVivaldi.563d866f7e9fb56bea24.png",
     "static/media/Tw3SkjallDead.png": "/memory-card-project/static/media/Tw3SkjallDead.5f1adb0b4043565c5f00.png",
     "static/media/Tw3DamienDeLaTour.png": "/memory-card-project/static/media/Tw3DamienDeLaTour.f7c4a01241b7e7598547.png",
     "static/media/Tw3LugosDrummond.png": "/memory-card-project/static/media/Tw3LugosDrummond.58e1c71f672c6b87cd6f.png",
@@ -100,7 +99,6 @@
     "static/media/Tw3GaunterODimm.png": "/memory-card-project/static/media/Tw3GaunterODimm.5647e4dc88f5f4bd2f47.png",
     "static/media/Tw3MariaLouisaLaValette.png": "/memory-card-project/static/media/Tw3MariaLouisaLaValette.635e6e0d581f7310cccb.png",
     "static/media/Tw3Cyclops.png": "/memory-card-project/static/media/Tw3Cyclops.24a4a318949f1f4925db.png",
-    "static/media/Tw3RoachStallion.png": "/memory-card-project/static/media/Tw3RoachStallion.87cf6d94886ed4ab6090.png",
     "static/media/Tw3Folan.png": "/memory-card-project/static/media/Tw3Folan.2f68d6b4128e2719bcb6.png",
     "static/media/Tw3VivienneDeTabris.png": "/memory-card-project/static/media/Tw3VivienneDeTabris.cdfdc09a1ec4e37b5137.png",
     "static/media/Tw3KeiraMetz.png": "/memory-card-project/static/media/Tw3KeiraMetz.5614559e60e2d12610c6.png",
@@ -134,16 +132,15 @@
     "static/media/Tw3JennyOfTheWoods.png": "/memory-card-project/static/media/Tw3JennyOfTheWoods.ce2a1a63dd9d04c11965.png",
     "static/media/Tw3IgnisFatuus.png": "/memory-card-project/static/media/Tw3IgnisFatuus.41f349e51ff5cf45d765.png",
     "static/media/Tw3Mourntart.png": "/memory-card-project/static/media/Tw3Mourntart.f9505ce4c1b8a74801e9.png",
-    "static/media/Tw3Umbra.png": "/memory-card-project/static/media/Tw3Umbra.b2255d9a34d9565f58de.png",
     "static/media/Tw3Abaya.png": "/memory-card-project/static/media/Tw3Abaya.16e02df44aa1f34c5e54.png",
     "static/media/Tw3Salma.png": "/memory-card-project/static/media/Tw3Salma.ec0ebbb0fe974be8279d.png",
     "static/media/Tw3HigherVampire.png": "/memory-card-project/static/media/Tw3HigherVampire.a16f0cd5b4360119d894.png",
     "static/media/Tw3JanneDoppler.png": "/memory-card-project/static/media/Tw3JanneDoppler.e5191c01e29c326c65ec.png",
     "static/media/Tw3Succubus.png": "/memory-card-project/static/media/Tw3Succubus.b3c46fa0ae7729f2ff7b.png",
     "index.html": "/memory-card-project/index.html",
-    "main.d87aafe5.js.map": "/memory-card-project/static/js/main.d87aafe5.js.map"
+    "main.9d838077.js.map": "/memory-card-project/static/js/main.9d838077.js.map"
   },
   "entrypoints": [
-    "static/js/main.d87aafe5.js"
+    "static/js/main.9d838077.js"
   ]
 }
