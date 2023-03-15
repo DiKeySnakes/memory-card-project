@@ -20,7 +20,6 @@ import Tw3EmhyrVarEmreis from '../assets/images/Tw3EmhyrVarEmreis.png';
 import Tw3BirnaBran from '../assets/images/Tw3BirnaBran.png';
 import Tw3Roach from '../assets/images/Tw3Roach.png';
 import Tw3Antler from '../assets/images/Tw3Antler.png';
-import Tw3AntonioVivaldi from '../assets/images/Tw3AntonioVivaldi.png';
 import Tw3Cyclops from '../assets/images/Tw3Cyclops.png';
 import Tw3TheWraithFromThePainting from '../assets/images/Tw3TheWraithFromThePainting.png';
 import Tw3Ethereal from '../assets/images/Tw3Ethereal.png';
@@ -131,8 +130,6 @@ import Tw3Dopplers from '../assets/images/Tw3Dopplers.png';
 import Tw3IgnisFatuus from '../assets/images/Tw3IgnisFatuus.png';
 import Tw3TheElder from '../assets/images/Tw3TheElder.png';
 import Tw3HigherVampire from '../assets/images/Tw3HigherVampire.png';
-import Tw3Umbra from '../assets/images/Tw3Umbra.png';
-import Tw3RoachStallion from '../assets/images/Tw3RoachStallion.png';
 import uniqid from 'uniqid';
 
 const HardLevelImages = [
@@ -155,9 +152,8 @@ const HardLevelImages = [
   { src: Tw3Pellar, name: 'The Pellar', id: uniqid() },
   { src: Tw3EmhyrVarEmreis, name: 'Emhyr var Emreis', id: uniqid() },
   { src: Tw3BirnaBran, name: 'Birna Bran', id: uniqid() },
-  { src: Tw3Roach, name: 'Roach Mare', id: uniqid() },
+  { src: Tw3Roach, name: 'Roach', id: uniqid() },
   { src: Tw3Antler, name: 'Antler', id: uniqid() },
-  { src: Tw3AntonioVivaldi, name: 'Antonio Vivaldi', id: uniqid() },
   { src: Tw3Cyclops, name: 'Cyclops', id: uniqid() },
   { src: Tw3Ethereal, name: 'Ethereal', id: uniqid() },
   { src: Tw3Hendrik, name: 'Hendrik', id: uniqid() },
@@ -262,8 +258,6 @@ const HardLevelImages = [
   { src: Tw3IgnisFatuus, name: 'Ignis Fatuus', id: uniqid() },
   { src: Tw3TheElder, name: 'The Unseen Elder', id: uniqid() },
   { src: Tw3HigherVampire, name: 'Higher Vampire', id: uniqid() },
-  { src: Tw3Umbra, name: 'Umbra', id: uniqid() },
-  { src: Tw3RoachStallion, name: 'Roach Stallion', id: uniqid() },
   {
     src: Tw3BarnabasBasilFoulty,
     name: 'Barnabas-Basil Foulty',

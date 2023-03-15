@@ -130,6 +130,8 @@ function Canvas(props) {
   const isPlaying = props.isPlaying;
   const pauseAudio = props.pauseAudio;
 
+  const LOCAL_STORAGE_KEY = 'memoryCardProject.bestScore';
+
   const [cards, setCards] = useState(shuffle(difficultyLevel));
 
   useEffect(() => {
@@ -141,6 +143,17 @@ function Canvas(props) {
   const [clicked, setClicked] = useState([]);
   const [message, setMessage] = useState('');
   const [isGameOver, setIsGameOver] = useState(false);
+
+  useEffect(() => {
+    const storedBestScore = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+    if (storedBestScore) {
+      setBest(storedBestScore);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(best));
+  }, [best]);
 
   let subtitle;
   const [modalIsOpen, setIsOpen] = useState(false);
